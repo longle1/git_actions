@@ -1,0 +1,23 @@
+name: Test git action
+on:
+  push: 
+    branches:
+      - main
+  pull_resquest:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: helloworld
+        run: echo "Hello world"
+        shell: bash
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: goodbye world
+        run: echo "good bye"
+        shell: bash
